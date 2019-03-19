@@ -6,8 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-#source('~/Desktop/Teachable Tidbit/delaydiscount.R')
-setwd('~/Desktop/Teachable Tidbit/')
+setwd('~/R_Projects/dd_teach/')
 timepress <- readRDS('timepress.rds')
 hist1 <- readRDS('hist1.rds')
 hist2 <- readRDS('hist2.rds')

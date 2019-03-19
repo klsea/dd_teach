@@ -30,7 +30,6 @@ timepress <- ggplot(dd3, aes(Condition, DiscountRate, fill = Condition)) + geom_
   geom_errorbar(aes(ymin=DiscountRate-se, ymax=DiscountRate+se), width = .2, position = position_dodge(.9)) +
    theme_bw() + theme(legend.position = 'none')
 
-setwd('~/Desktop/Teachable Tidbit/')
 saveRDS(timepress, 'timepress.rds')
 saveRDS(hist1, 'hist1.rds')
 saveRDS(hist2, 'hist2.rds')
