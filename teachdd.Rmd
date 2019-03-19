@@ -1,0 +1,33 @@
+---
+title: "Delay Discounting"
+author: "Kendra Seaman"
+date: "11/8/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#source('~/Desktop/Teachable Tidbit/delaydiscount.R')
+setwd('~/Desktop/Teachable Tidbit/')
+timepress <- readRDS('timepress.rds')
+hist1 <- readRDS('hist1.rds')
+hist2 <- readRDS('hist2.rds')
+```
+
+Untimed
+
+```{r echo=FALSE, fig.height = 3}
+hist1
+```
+
+Timed
+
+```{r echo=FALSE, fig.height = 3}
+hist2
+```
+
+Class Average
+
+```{r echo=FALSE, fig.width = 4, fig.height = 4}
+timepress
+```
+
