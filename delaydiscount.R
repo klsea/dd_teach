@@ -13,15 +13,13 @@ dd <- gs_title("Delay Discounting (Responses)")
 gs_ws_ls(dd)
 
 # get delay discounting data
-dd1 <- gs_read(ss=dd, ws = "Form Responses 1")
-colnames(dd1) <- c('Timestamp', 'Untimed', 'Timed')
+dd0 <- gs_read(ss=dd, ws = "Form Responses 1")
+colnames(dd0) <- c('Timestamp', 'Untimed', 'Timed')
+dd1 <- dd0[complete.cases(dd0),]
 
 # calculate means
 dd2 <- melt(dd1, id.vars = 'Timestamp', variable.name = 'Condition', value.name = 'DiscountRate')
 dd3 <- summarySE(dd2, measurevar = 'DiscountRate', groupvars = 'Condition')
-
-# calculate difference scores
-#dd1$diff <- dd1$Timed - dd1$Untimed
 
 # histograms
 hist1 <- ggplot(dd1, aes(x=Untimed)) + geom_histogram(binwidth = 0.001, fill="#FF6666") + expand_limits(x=c(0,0.15)) +theme_bw()
